@@ -1,3 +1,5 @@
+Server:iiot-upc.gleeze.com:1883
+
 
 user:iiot-upc
 
