@@ -1,0 +1,33 @@
+
+user:iiot-upc
+
+pass:cim2020
+
+
+-----------------------
+const char *WIFI_SSID = "AndroidAP";
+const char *WIFI_PASSWORD = "plbh5028";
+char macAddress[18];
+
+// Add MQTT Broker settings
+const char *MQTT_BROKER_IP = "iiot-upc.gleeze.com";
+const int MQTT_PORT = 1883;
+const char *MQTT_USER = "iiot-upc";
+const char *MQTT_PASSWORD = "cim2020";
+const bool RETAINED = true;
+const int QoS = 0; // Quality of Service for the subscriptions
+
+
+-----------------------------
+// Replace the next variables with your Wi-Fi SSID/Password
+const char *WIFI_SSID = "AulaAutomatica";
+const char *WIFI_PASSWORD = "ticsFcim";
+char macAddress[18];
+
+// Add MQTT Broker settings
+const char *MQTT_BROKER_IP = "";
+const int MQTT_PORT = 1883;
+const char *MQTT_USER = "";
+const char *MQTT_PASSWORD = "";
+const bool RETAINED = true;
+const int QoS = 0; // Quality of Service for the subscriptions
