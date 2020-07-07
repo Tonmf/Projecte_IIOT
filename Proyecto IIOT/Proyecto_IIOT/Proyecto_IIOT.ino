@@ -12,7 +12,7 @@
 #define DHT_TYPE DHT11 // Defines the sensor type. It can be DHT11 or DHT22
 // Define new subscription topics here
 #define COMMAND_TOPIC "rele"
-#define TEST_TOPIC "test"
+#define TEST_TOPIC "P"
 
 // Replace the next variables with your Wi-Fi SSID/Password
 const char *WIFI_SSID = "MOVISTAR_A781";
@@ -101,9 +101,12 @@ void SensPresencia(){
   }
 
 void LecturaDHT11() {
-  temperatura = dhtSensor.readTemperature(); // Reads the temperature, it takes
-  humedad = dhtSensor.readHumidity(); // Reads the temperature, it takes                                   
-}
+  
+  float t=dhtSensor.readTemperature();
+  float h=dhtSensor.readHumidity(); 
+  if(!isnan(t)){temperatura =t;}
+  if(!isnan(h)){humedad = h;}
+   }
 
 void setSubscriptions() {
   subscribe(COMMAND_TOPIC);
