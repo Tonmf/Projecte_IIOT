@@ -1,1 +1,11 @@
 ##Funciones 
+
+Proyecto_IIOT.ino: Simula la acción de abertura de la valla en la fabrica. Donde se dispone de un sensor de presencia( para detectar el camión). 
+Un motor, que simula la obertura de la valla y unos leds que indican tres estados:
+Rojo: No se ha detectado nada por el sensor.
+Azul: se ha detectado el camión.
+Verde: El camión ha pulsado el botón para acceder a la fabrica.
+
+MQTT_gleeze_01.ino: El botón abre la valla(motor) del Proyecto_IIOT. 
+
+En ambos proyectos se envian valores de temperatura simulando la temperatura y humedad en la oficina(Proyecto_IIOT) y la temperatura de una vaca(MQTT_gleeze_01).
