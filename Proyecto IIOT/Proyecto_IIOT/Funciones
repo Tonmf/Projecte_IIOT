@@ -1,11 +1,20 @@
 ##Funciones 
 
-Proyecto_IIOT.ino: Simula la acción de abertura de la valla en la fabrica. Donde se dispone de un sensor de presencia( para detectar el camión). 
-Un motor, que simula la obertura de la valla y unos leds que indican tres estados:
-Rojo: No se ha detectado nada por el sensor.
-Azul: se ha detectado el camión.
-Verde: El camión ha pulsado el botón para acceder a la fabrica.
+Procedemos a explicar el prototipo realizado. El prototipo consta de 2 ESP32 con sensores y actuadores, un servidor MQTT y un ordenador con Node-Red.
 
-MQTT_gleeze_01.ino: El botón abre la valla(motor) del Proyecto_IIOT. 
+La 1era ESP (MQTT_gleeze_02)simula un camión y una vaca. Como vaca envía la información de la temperatura. Como camión, dispone de un botón que se utiliza para pedir abrir la puerta.
 
-En ambos proyectos se envian valores de temperatura simulando la temperatura y humedad en la oficina(Proyecto_IIOT) y la temperatura de una vaca(MQTT_gleeze_01).
+La 2da ESP (ProyectoIIOT) simula las oficinas y la fábrica. Como oficinas envía datos de temperatura y humedad. Como fábrica tiene el control de apertura de la puerta. Para abrir la puerta, es necesario que el camión pulse el botón de petición de apertura de puerta y que el sensor de presencia de camión esté activo. Cuando se dan estas dos condiciones, la puerta se abre. Además tiene una señal luminosa que cambia de color en función de la situación:
+•	Rojo: No se ha detectado nada con el sensor de presencia.
+•	Azul: se ha detectado presencia de camión.
+•	Verde: El camión ha pulsado el botón para acceder a la fábrica.
+
+El ordenador con Node-Red se encarga de la comunicación entre los dispositivos.
+
+El servidor de MQTT, se utiliza para publicar y subscribir los topics de los distintos dispositivos.
+
+Descripción Topics:
+•	T: temperatura.
+•	H: humedad.
+•	P: pulsador petición apertura puerta.
+•	Rele: se utiliza para recibir la petición de apertura de puerta.
